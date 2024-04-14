@@ -1,7 +1,7 @@
+import LandingPage from '@/app/ui/landing'
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="">manavhirani</h1>
-    </main>
+    <LandingPage />
   );
 }
