@@ -26,7 +26,7 @@ export default function LandingPage() {
           <div className="w-full h-1 bg-gradient-to-r from-white via-orange-300 to-red-300 lg:bg-gradient-to-b lg:w-2 lg:h-full" />
 
           <div className="flex items-center justify-center w-full p-4 text-center lg:min-h-64 lg:text-left lg:justify-start">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-8">
               <a href="https://www.github.com/manavhirani" className="relative inline-block p-4 overflow-hidden group">
                 <div className="absolute top-0 left-0 w-0 h-0 transition-all duration-300 ease-out border-t border-rose-500 group-hover:border-gray-400 group-hover:w-full"></div>
                 <div className="absolute top-0 right-0 w-0 h-0 transition-all duration-300 ease-out border-r border-blue-500 group-hover:border-gray-400 group-hover:h-full"></div>
