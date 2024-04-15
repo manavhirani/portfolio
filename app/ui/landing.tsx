@@ -44,7 +44,7 @@ export default function LandingPage() {
                 <div className="absolute bottom-0 left-0 w-0 h-0 transition-all duration-300 ease-out border-l-2 border-yellow-500 group-hover:border-gray-400 group-hover:h-full"></div>
                 <div className="flex flex-row items-center justify-center gap-2">
                   <X width={"2em"} height={"2em"} />
-                  <p className="text-2xl">/ manavhirani</p>
+                  <p className="text-2xl">@manavhirani</p>
                 </div>
               </a>
             </div>
