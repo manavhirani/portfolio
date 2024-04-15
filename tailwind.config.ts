@@ -1,3 +1,4 @@
+import { JetBrains_Mono } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -12,6 +13,12 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      fontFamily: {
+        sans: ["Inter var", "system-ui"],
+        serif: ["Georgia", "Cambria"],
+        mono: ["Menlo", "Monaco", "Courier New", "monospace"],
+        jetbrains_mono: ["JetBrains Mono", "monospace"],
       },
     },
   },
