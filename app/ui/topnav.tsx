@@ -10,7 +10,7 @@ const poiret_one = Poiret_One({
 export default function TopNav() {
 
   return (
-    <div className="border rounded-full border-zinc-800 backdrop-blur-sm bg-black/90">
+    <div className="border rounded-full border-zinc-800 backdrop-blur-sm bg-black/50">
       <div className="flex px-8 py-4 ">
         <Link href="/">
           <div className={`${poiret_one.className} text-4xl mb-1`}>
