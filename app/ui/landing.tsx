@@ -17,8 +17,8 @@ export default function LandingPage() {
         <div className="flex flex-col items-center w-full gap-8 p-8 lg:flex-row">
           <div className="flex items-center justify-center w-full p-4 text-center lg:text-right lg:min-h-64 lg:justify-end">
             <div className="space-y-4">
-              <h1 className="text-6xl font-bold text-transparent sm:text-8xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text font-jetbrains_mono text-balance">
-                {"full stack dev"}
+              <h1 className="text-4xl font-bold text-transparent sm:text-6xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-balance">
+                {"Some website title would ideally go here"}
               </h1>
             </div>
           </div>
