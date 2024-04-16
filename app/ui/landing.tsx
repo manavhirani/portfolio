@@ -18,7 +18,7 @@ export default function LandingPage() {
           <div className="flex items-center justify-center w-full p-4 text-center lg:text-right lg:min-h-64 lg:justify-end">
             <div className="space-y-4">
               <h1 className="p-4 text-4xl font-bold text-transparent sm:text-6xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-balance min-h-fit">
-                {"Some website title would ideally go here"}
+                {"computer scientist"}
               </h1>
             </div>
           </div>

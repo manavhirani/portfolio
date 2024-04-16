@@ -3,16 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --text-color: rgb(0, 0, 0);
-  --bg-color: rgb(255, 255, 255);
+  --text-color: rgb(255, 255, 255);
+  --bg-color: rgb(0, 0, 0);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: rgb(255, 255, 255);
-    --bg-color: rgb(0, 0, 0);
-  }
-}
+@media (prefers-color-scheme: dark) {}
 
 body {
   color: var(--text-color);

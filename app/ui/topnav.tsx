@@ -27,37 +27,13 @@ export default function TopNav() {
             <Github width={"2rem"} height={"2rem"} />
           </a>
         </div>
-        <div className="flex flex-row items-center justify-center gap-4 md:hidden">
-          <a href="https://www.github.com/manavhirani">
-            <Github width={"2rem"} height={"2rem"} />
-          </a>
-          {/* <div style={{ fontVariationSettings: "'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48" }} className="flex items-center justify-center">
+        <div className="flex flex-row items-center justify-center gap-2 md:hidden">
+          <button style={{ fontVariationSettings: "'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48" }} className="flex items-center justify-center">
             <span className="material-symbols-outlined">menu</span>
-          </div> */}
-          <div className="drawer drawer-end">
-            <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-            <div className="p-0 drawer-content">
-              {/* Page content here */}
-              <label htmlFor="my-drawer-4" className="px-4 drawer-div btn btn-ghost">
-                <div style={{ fontVariationSettings: "'FILL' 2, 'wght' 700, 'GRAD' 0, 'opsz' 48" }} className="flex items-center justify-center scale-150">
-                  <span className="material-symbols-outlined">menu</span>
-                </div>
 
-              </label>
-            </div>
-            <div className=" drawer-side">
-              <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-              <ul className="min-h-full gap-2 p-4 text-xl menu w-80 bg-base-200 text-base-content">
-                {/* Sidebar content here */}
-                <li className=""> <Link href="/projects" className="border-b-2 border-transparent">projects</Link></li>
-                <li> <Link href="/resume" className="border-b-2 border-transparent ">resume</Link></li>
-                <li> <Link href="/blog" className="border-b-2 border-transparent">blog</Link></li>
-                <li> <Link href="/contact" className="border-b-2 border-transparent">contact</Link></li>
-              </ul>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
