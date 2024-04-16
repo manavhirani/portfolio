@@ -1,5 +1,5 @@
-import Github from "@/app/ui/githubicon";
-import X from "@/app/ui/xicon";
+import Github from "@/ui/githubicon";
+import X from "@/ui/xicon";
 
 const Hero = () => {
   return (
@@ -11,7 +11,6 @@ const Hero = () => {
               {"computer scientist"}
             </h1>
             <p className="text-2xl bg-gradient-to-r from-white to-teal-400 bg-clip-text">building <span><a href="https://manavhirani.github.io/kigumigroupdemo/" className="font-black text-transparent font-jetbrains_mono">@kigumigroup</a></span></p>
-            <p className="text-2xl">open source enthusiast</p>
             <p className="text-2xl">ai engineer & researcher</p>
             <p className="text-2xl">freelance web developer</p>
           </div>
@@ -43,16 +42,21 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   );
-}
+};
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col gap-4 p-4 antialiased divide-y divide-white/10">
-      {/* <div className="w-full sm:h-16 md:h-32"></div> */}
+    <div className="flex flex-col gap-4 p-4 divide-y divide-white/10">
       <Hero />
+      <div className="h-96">
+        {/* <ThreeJsTest /> */}
+      </div>
+      <div className="h-96">
+        {/* <ThreeJsTest /> */}
+      </div>
     </div >
   );
 }
