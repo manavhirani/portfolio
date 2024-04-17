@@ -7,6 +7,8 @@ const poiret_one = Poiret_One({
   subsets: ["latin"],
 });
 
+const twColors = ['red', 'green', 'blue', 'yellow', 'indigo', 'purple', 'pink', 'rose', 'fuchsia', 'cyan', 'teal', 'emerald', 'lime', 'amber', 'orange', 'violet', 'sky', 'mint', 'lime'];
+
 const DropDownMenu = () => {
   return (
     <div className="dropdown">
@@ -32,7 +34,7 @@ const DropDownMenu = () => {
 export default function TopNav() {
 
   return (
-    <div className="border rounded-full border-zinc-800 backdrop-blur-sm bg-black/50">
+    <div className={`border rounded-full border-zinc-800 backdrop-blur-sm bg-black/50`}>
       <div className="flex px-8 py-4 ">
         <Link href="/">
           <div className={`${poiret_one.className} text-4xl mb-1`}>
