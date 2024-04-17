@@ -8,14 +8,14 @@ const Hero = () => {
         <div className="flex items-center justify-center w-full p-4 text-center md:text-right md:min-h-64 md:justify-end">
           <div className="p-4 space-y-2">
             <div className="text-6xl font-bold text-transparent sm:text-6xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-balance">
-              <h1 >
+              <h1>
                 {"computer"}
               </h1>
               <h1>
                 {"scientist"}
               </h1>
             </div>
-            <p className="text-2xl bg-gradient-to-r from-white to-teal-400 bg-clip-text">building <span><a href="https://manavhirani.github.io/kigumigroupdemo/" className="font-black text-transparent font-jetbrains_mono">@kigumigroup</a></span></p>
+            <p className="text-2xl bg-gradient-to-r from-white to-green-400 bg-clip-text">building <span><a href="https://manavhirani.github.io/kigumigroupdemo/" className="font-black text-transparent font-jetbrains_mono">@kigumigroup</a></span></p>
             <p className="text-2xl">open source enthusiast</p>
             <p className="text-2xl">ai engineer & researcher</p>
             <p className="text-2xl">freelance web developer</p>
@@ -48,15 +48,14 @@ const Hero = () => {
             </a>
           </div>
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 }
 
 export default function LandingPage() {
   return (
     <div className="flex flex-col gap-4 p-4 antialiased divide-y divide-white/10">
-      {/* <div className="w-full sm:h-16 md:h-32"></div> */}
       <Hero />
     </div >
   );

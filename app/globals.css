@@ -2,14 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --text-color: rgb(255, 255, 255);
   --bg-color: rgb(0, 0, 0);
 }
 
-@media (prefers-color-scheme: dark) {}
-
 body {
   color: var(--text-color);
   background: var(--bg-color);
-}
+} */

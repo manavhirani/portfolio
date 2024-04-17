@@ -22,7 +22,29 @@ const config: Config = {
       },
     },
   },
+
+  daisyui: {
+    themes: [
+      {
+        dark: {
+          "primary": "#ffffff",
+          "secondary": "#9ca3af",
+          "accent": "#7dd3fc",
+          "neutral": "#1f2937",
+          "base-100": "#050505",
+          "info": "#86efac",
+          "success": "#bef264",
+          "warning": "#fb923c",
+          "error": "#f87171",
+        },
+      },
+    ],
+  },
+
   plugins: [
+    require("@tailwindcss/typography"),
+    require("daisyui"),
+    require('flowbite/plugin'),
   ],
 };
 export default config;
