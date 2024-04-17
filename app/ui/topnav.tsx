@@ -21,8 +21,8 @@ const DropDownMenu = () => {
         {/* Sidebar content here */}
         <li><Link className="flex w-full p-4 rounded-none" href="/projects">projects</Link></li>
         <li><Link className="flex w-full p-4 rounded-none" href="/resume">resume</Link></li>
-        <li><Link className="flex w-full p-4 rounded-none" href="/resume">blog</Link></li>
-        <li><Link className="flex w-full p-4 rounded-none" href="/resume">contact</Link></li>
+        <li><Link className="flex w-full p-4 rounded-none" href="/blog">blog</Link></li>
+        <li><Link className="flex w-full p-4 rounded-none" href="/contact">contact</Link></li>
         <li><a className="flex w-full p-4 rounded-none" href="https://www.github.com/manavhirani"><Github />  / manavhirani</a></li>
       </ul>
     </div>

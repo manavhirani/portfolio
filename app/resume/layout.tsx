@@ -4,7 +4,7 @@ export default function ResumeLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div className="">
       {children}
     </div>
   );
