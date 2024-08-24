@@ -1,5 +1,6 @@
 import Github from "@/app/ui/githubicon";
 import X from "@/app/ui/xicon";
+import GameOfLife from "./widgets/gameoflife";
 
 const Hero = () => {
   return (
@@ -57,6 +58,7 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col gap-4 p-4 antialiased divide-y divide-white/10">
       <Hero />
+      <GameOfLife />
     </div >
   );
 }
