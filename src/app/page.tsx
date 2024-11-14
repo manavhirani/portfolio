@@ -18,7 +18,20 @@ export default function Home() {
           <a href="https://www.linkedin.com/in/manav-hirani/">LinkedIn</a>
         </li>
       </ul>
+      <p>Tech Stack</p>
+      <p>Back End</p>
+      <ul>
+        <li>
+          Rust
+        </li>
+        <li>
+          gRPC
+        </li>
+        <li>
+          Node.js
+        </li>
+      </ul>
       <p>Email: <a href="mailto:mxhirani@gmail.com">mxhirani@gmail.com</a></p>
     </div>
-    );
+  );
 }
