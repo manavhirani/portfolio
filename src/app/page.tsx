@@ -3,7 +3,7 @@ export default function Home() {
     <div className="p-12">
       <h1 className="text-3xl">Manav Hirani</h1>
       <p>AI Engineer & Researcher</p>
-      <p>Scaling LLM's at Syracuse University</p>
+      <p>Scaling LLMs at Syracuse University</p>
       <ul>
         <li>
           <a href="https://github.com/manavhirani">GitHub</a>
