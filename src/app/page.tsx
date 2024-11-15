@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import Hero from "@/markdown/hero.mdx";
