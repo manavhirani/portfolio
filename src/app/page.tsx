@@ -19,16 +19,56 @@ export default function Home() {
         </li>
       </ul>
       <p>Tech Stack</p>
-      <p>Back End</p>
       <ul>
-        <li>
-          Rust
+        <li>Programming Languages and Frameworks
+          <ul>
+            <li>Python</li>
+            <li>Rust</li>
+            <li>C++</li>
+          </ul>
         </li>
-        <li>
-          gRPC
+        <li>APIs and Protocols
+          <ul>
+            <li>gRPC</li>
+            <li>REST API</li>
+            <li>OAuth 2.0</li>
+            <li>Auth0</li>
+          </ul>
         </li>
-        <li>
-          Node.js
+        <li>Machine Learning and AI
+          <ul>
+            <li>JAX</li>
+            <li>PyTorch</li>
+            <li>TensorFlow</li>
+            <li>LangChain</li>
+            <li>LLaMa Index</li>
+            <li>CUDA</li>
+          </ul>
+        </li>
+        <li>Databases and Data Management
+          <ul>
+            <li>Postgres</li>
+            <li>Supabase</li>
+            <li>Pinecone</li>
+            <li>FAISS</li>
+          </ul>
+        </li>
+        <li>Cloud and Infrastructure
+          <ul>
+            <li>AWS</li>
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>Grafana</li>
+            <li>Prometheus</li>
+          </ul>
+        </li>
+        <li>Documentation and Collaboration Tools
+          <ul>
+            <li>Markdown</li>
+            <li>Git</li>
+            <li>GitHub Actions</li>
+            <li>Jupyter Notebooks</li>
+          </ul>
         </li>
       </ul>
       <p>Email: <a href="mailto:mxhirani@gmail.com">mxhirani@gmail.com</a></p>
