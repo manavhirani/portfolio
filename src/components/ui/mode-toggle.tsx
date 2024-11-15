@@ -18,7 +18,7 @@ export function ModeToggle() {
         } else if (theme === "dark") {
             setTheme("system");
         } else {
-            setTheme("light"); // Loop back to light after system
+            setTheme("light");
         }
     };
 
