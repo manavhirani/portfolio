@@ -1,10 +1,17 @@
+import { ModeToggle } from "@/components/ui/mode-toggle";
+
+// Add className="ml-6 list-disc [&>li]:mt-2" to the ul element
+
 export default function Home() {
   return (
     <div className="p-12">
-      <h1 className="text-3xl">Manav Hirani</h1>
+      <div className="inline-flex justify-between w-full">
+        <h1 className="text-3xl">Manav Hirani</h1>
+        <ModeToggle />
+      </div>
       <p>AI Engineer & Researcher</p>
       <p>Scaling LLMs at Syracuse University</p>
-      <ul>
+      <ul className="ml-6 list-disc [&>li]:mt-2">
         <li>
           <a href="https://github.com/manavhirani">GitHub</a>
         </li>
@@ -19,16 +26,16 @@ export default function Home() {
         </li>
       </ul>
       <p>Tech Stack</p>
-      <ul>
+      <ul className="ml-6 list-disc [&>li]:mt-2">
         <li>Programming Languages and Frameworks
-          <ul>
+          <ul className="ml-6 list-disc [&>li]:mt-2">
             <li>Python</li>
             <li>Rust</li>
             <li>C++</li>
           </ul>
         </li>
         <li>APIs and Protocols
-          <ul>
+          <ul className="ml-6 list-disc [&>li]:mt-2">
             <li>gRPC</li>
             <li>REST API</li>
             <li>OAuth 2.0</li>
@@ -36,7 +43,7 @@ export default function Home() {
           </ul>
         </li>
         <li>Machine Learning and AI
-          <ul>
+          <ul className="ml-6 list-disc [&>li]:mt-2">
             <li>JAX</li>
             <li>PyTorch</li>
             <li>TensorFlow</li>
@@ -46,7 +53,7 @@ export default function Home() {
           </ul>
         </li>
         <li>Databases and Data Management
-          <ul>
+          <ul className="ml-6 list-disc [&>li]:mt-2">
             <li>Postgres</li>
             <li>Supabase</li>
             <li>Pinecone</li>
@@ -54,7 +61,7 @@ export default function Home() {
           </ul>
         </li>
         <li>Cloud and Infrastructure
-          <ul>
+          <ul className="ml-6 list-disc [&>li]:mt-2">
             <li>AWS</li>
             <li>Docker</li>
             <li>Kubernetes</li>
@@ -63,7 +70,7 @@ export default function Home() {
           </ul>
         </li>
         <li>Documentation and Collaboration Tools
-          <ul>
+          <ul className="ml-6 list-disc [&>li]:mt-2">
             <li>Markdown</li>
             <li>Git</li>
             <li>GitHub Actions</li>
