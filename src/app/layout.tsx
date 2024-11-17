@@ -1,5 +1,7 @@
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
+import { NavBar } from "@/components/navbar";
+import { Separator } from "@/components/ui/separator";
 
 export default function RootLayout({
   children,
@@ -16,7 +18,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="p-12 flex-col gap-10 flex">
+            <NavBar />
+            <Separator className="" />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
