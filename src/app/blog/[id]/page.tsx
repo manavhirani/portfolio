@@ -3,13 +3,6 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeHighlight from 'rehype-highlight';
 import "@/styles/github-dark.css";
 
-
-interface BlogPostParams {
-    params: {
-        id: string;
-    };
-}
-
 interface GitHubContent {
     name: string;
     path: string;
@@ -78,19 +71,17 @@ async function fetchBlogPosts(): Promise<BlogPost[]> {
     }
 }
 
-// Function to fetch post details by ID
 async function fetchPostById(id: string): Promise<{ title: string; content: string } | null> {
     try {
-        // This function would typically need to make an API call to find the post by ID
-        // Here, we're going to simulate this with a mock data fetch.
-        const posts = await fetchBlogPosts(); // Assuming you have this function defined or imported
+        // Fetch all blog posts
+        const posts = await fetchBlogPosts();
         const foundPost = posts.find(post => post.id === id);
 
         if (!foundPost) {
             return null;
         }
 
-        // Since we stored the SHA as ID, we can fetch the content directly
+        // Since we stored the SHA as ID, fetch the content directly
         const content = await fetchPostContent(`${foundPost.title}.md`);
 
         return {
@@ -103,10 +94,9 @@ async function fetchPostById(id: string): Promise<{ title: string; content: stri
     }
 }
 
-
-
-export default async function BlogPost({ params }: BlogPostParams) {
-    const {id}  = params;
+// The updated function to work with App Router
+export default async function BlogPost({ params }: { params: { id: string } }) {
+    const { id } = params;
     const post = await fetchPostById(id);
     const options = {
         mdxOptions: {
@@ -124,7 +114,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
             <article>
                 <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
                 <div className='prose dark:prose-invert'>
-                    <MDXRemote source={post.content} options={options}/>
+                    <MDXRemote source={post.content} options={options} />
                 </div>
             </article>
         </div>
