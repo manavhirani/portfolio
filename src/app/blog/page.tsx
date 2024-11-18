@@ -18,7 +18,7 @@ async function fetchBlogPosts(): Promise<BlogPost[]> {
 		}
 		const posts = await response.json();
 	
-		return await Promise.all(posts.map(async (post: any) => {
+		return await Promise.all(posts.map(async (post: { sha: string; name: string }) => {
 			return {
 				id: post.sha,
 				title: post.name.replace(/\.md$/, ''),
