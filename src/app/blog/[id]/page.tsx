@@ -106,7 +106,7 @@ async function fetchPostById(id: string): Promise<{ title: string; content: stri
 
 
 export default async function BlogPost({ params }: BlogPostParams) {
-    const { id } = await params;
+    const {id}  = params;
     const post = await fetchPostById(id);
     const options = {
         mdxOptions: {
