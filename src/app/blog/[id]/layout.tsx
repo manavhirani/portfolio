@@ -4,7 +4,7 @@ export default function BlogPostLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="w-full">
+        <div className="">
             {children}
         </div>
     );

@@ -1,7 +1,15 @@
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeHighlight from 'rehype-highlight';
+
 import "@/styles/github-dark.css";
+
+const options = {
+    mdxOptions: {
+        remarkPlugins: [],
+        rehypePlugins: [rehypeHighlight],
+    }
+};
 
 interface GitHubContent {
     name: string;
@@ -99,22 +107,16 @@ export default async function BlogPost(props: { params: Promise<{ id: string }> 
     const params = await props.params;
     const { id } = params;
     const post = await fetchPostById(id);
-    const options = {
-        mdxOptions: {
-            remarkPlugins: [],
-            rehypePlugins: [rehypeHighlight],
-        }
-    };
 
     if (!post) {
         notFound(); // This will handle the 404 case
     }
 
     return (
-        <div className='w-full flex items-center justify-center'>
-            <article>
+        <div className='flex items-center justify-center w-full'>
+            <article className='flex flex-col items-start justify-center max-w-4xl w-full'>
                 <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-                <div className='prose dark:prose-invert'>
+                <div className='max-w-full prose dark:prose-invert'>
                     <MDXRemote source={post.content} options={options} />
                 </div>
             </article>

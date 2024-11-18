@@ -2,9 +2,8 @@ import { SkeletonCard } from "@/components/ui/skeleton-card"
 
 export default function BlogLoading() {
     return (
-        <>
-            Loading...
+        <div className="">
             <SkeletonCard />
-        </>
+        </div>
     )
 }

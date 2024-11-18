@@ -36,13 +36,13 @@ export default async function Blog() {
 	const posts = await fetchBlogPosts();
 
 	return (
-		<div className="grid grid-cols-3 gap-6">
+		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 			{posts.map((post) => (
 				<div key={post.id} className="w-full">
 					<Link href={`/blog/${post.id}`}>
-						<Card className="h-full">
+						<Card className="">
 							<CardHeader>
-								<CardTitle className="text-lg">{post.title}</CardTitle>
+								<CardTitle className="">{post.title}</CardTitle>
 							</CardHeader>
 							<CardDescription>
 								<CardContent>
