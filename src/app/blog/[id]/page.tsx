@@ -95,7 +95,8 @@ async function fetchPostById(id: string): Promise<{ title: string; content: stri
 }
 
 // The updated function to work with App Router
-export default async function BlogPost({ params }: { params: { id: string } }) {
+export default async function BlogPost(props: { params: Promise<{ id: string }> }) {
+    const params = await props.params;
     const { id } = params;
     const post = await fetchPostById(id);
     const options = {
