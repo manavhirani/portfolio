@@ -6,7 +6,7 @@ export function NavBar() {
   return (
     <nav className="flex items-center justify-between px-2">
       <Link href="/">
-        <h1 className="text-3xl font-black">Manav Hirani</h1>
+        <h1 className="text-3xl font-black">Manav</h1>
       </Link>
       <NavigationMenu>
           <NavigationMenuList>
