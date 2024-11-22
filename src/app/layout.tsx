@@ -20,9 +20,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="p-12 flex-col gap-10 flex">
+          <div className="p-6 flex-col gap-10 flex">
             <NavBar />
-            <Separator className="" />
+            {/* <Separator className="" /> */}
             {children}
           </div>
         </ThemeProvider>

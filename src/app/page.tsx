@@ -2,8 +2,8 @@ import Hero from "@/markdown/home/hero.mdx";
 
 export default function Home() {
   return (
-    <div className="">
-      <div className="prose dark:prose-invert">
+    <div className="p-6">
+      <div className="">
         <Hero />
       </div>
     </div>

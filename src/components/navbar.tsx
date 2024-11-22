@@ -4,7 +4,7 @@ import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuL
 
 export function NavBar() {
   return (
-    <nav className="flex items-center justify-between px-2">
+    <nav className="flex items-center justify-between p-6">
       <Link href="/">
         <h1 className="text-3xl font-black">Manav</h1>
       </Link>

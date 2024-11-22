@@ -116,7 +116,7 @@ export default async function BlogPost(props: { params: Promise<{ id: string }> 
         <div className='flex items-center justify-center w-full'>
             <article className='flex flex-col items-start justify-center max-w-4xl w-full'>
                 <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-                <div className='max-w-full prose dark:prose-invert'>
+                <div className='max-w-full'>
                     <MDXRemote source={post.content} options={options} />
                 </div>
             </article>
