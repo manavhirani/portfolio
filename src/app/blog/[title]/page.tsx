@@ -25,7 +25,6 @@ async function fetchPostContent(postName: string): Promise<string> {
 
     try {
         // https://raw.githubusercontent.com/manavhirani/blog/refs/heads/main/articles/Two%20Thousand%20and%20Twenty%20Four.md
-        const url = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/refs/heads/${branch}/${path}`;
         const response = await fetch(`https://raw.githubusercontent.com/${repoOwner}/${repoName}/refs/heads/${branch}/${path}`, { cache: 'no-store' });
         if (!response.ok) {
             throw new Error(`Failed to fetch content for ${postName}. Status: ${response.status}`);
