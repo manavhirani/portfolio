@@ -33,8 +33,8 @@ async function fetchBlogPosts(): Promise<BlogPost[]> {
 
 // Main Blog component
 export default async function Blog() {
-	const posts = await fetchBlogPosts();
 
+	const posts = await fetchBlogPosts();
 	return (
 		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 			{posts.map((post) => (
