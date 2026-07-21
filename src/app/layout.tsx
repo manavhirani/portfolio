@@ -1,9 +1,17 @@
 import "./globals.css";
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { ThemeProvider } from "@/components/theme-provider"
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ThemeProvider } from "@/components/theme-provider";
+import { StyleModeProvider } from "@/components/style-mode-provider";
 import { NavBar } from "@/components/navbar";
-// import { Separator } from "@/components/ui/separator";
+import { SiteShell } from "@/components/site-shell";
+
+export const metadata: Metadata = {
+  title: "Manav Hirani",
+  description:
+    "Software Architect · Multi-agent systems, applied NLP/ML, production infrastructure",
+};
 
 export default function RootLayout({
   children,
@@ -11,20 +19,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-style="retro">
       <head />
-      <body className="font-mono">
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="p-6 flex-col gap-10 flex">
-            <NavBar />
-            {/* <Separator className="" /> */}
-            {children}
-          </div>
+          <StyleModeProvider>
+            <SiteShell>
+              <NavBar />
+              {children}
+            </SiteShell>
+          </StyleModeProvider>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
