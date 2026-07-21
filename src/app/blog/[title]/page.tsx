@@ -27,9 +27,7 @@ export default async function BlogPost(props: {
     notFound();
   }
 
-  return (
-    <BlogPostView title={post.title}>
-      <MDXRemote source={post.content} options={options} />
-    </BlogPostView>
-  );
+  const mdx = await MDXRemote({ source: post.content, options });
+
+  return <BlogPostView title={post.title}>{mdx}</BlogPostView>;
 }
