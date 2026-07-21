@@ -274,6 +274,17 @@ html[data-style="retro"] .retro-footer {
   color: #333;
 }
 
+html[data-style="retro"] .retro-counter {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 8px;
+  background: #000;
+  color: #0f0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  border: 2px inset #808080;
+}
+
 html[data-style="retro"].dark .retro-footer {
   color: #99a;
 }

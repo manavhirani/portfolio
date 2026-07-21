@@ -203,12 +203,9 @@ function RetroTimeline() {
                 <font face="Courier New, monospace">&lt;font&gt;</font>, and
                 good intentions
                 <br />
-                <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='15'%3E%3Crect width='80' height='15' fill='%23000'/%3E%3Ctext x='4' y='11' fill='%230f0' font-family='monospace' font-size='10'%3Evisitors: ∞%3C/text%3E%3C/svg%3E"
-                  alt="visitor counter"
-                  width={80}
-                  height={15}
-                />
+                <span className="retro-counter" aria-label="visitor counter">
+                  visitors: ∞
+                </span>
               </font>
             </td>
           </tr>
