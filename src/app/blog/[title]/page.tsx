@@ -6,6 +6,9 @@ import { BlogPostView } from "@/components/blog-post-view";
 
 import "@/styles/github-dark.css";
 
+// Post content is fetched from GitHub at request time
+export const dynamic = "force-dynamic";
+
 const options = {
   mdxOptions: {
     remarkPlugins: [],

@@ -1,5 +1,8 @@
 import { BlogList } from "@/components/blog-list";
 
+// GitHub-backed listing must render on the server at request time
+export const dynamic = "force-dynamic";
+
 interface BlogPost {
   id: string;
   title: string;
@@ -10,22 +13,30 @@ async function fetchBlogPosts(): Promise<BlogPost[]> {
   try {
     const response = await fetch(
       "https://api.github.com/repos/manavhirani/blog/contents/articles",
-      { cache: "no-store" }
+      {
+        // ISR-friendly cache; force-dynamic still ensures route is not static-prerendered
+        next: { revalidate: 300 },
+      }
     );
     if (!response.ok) {
       throw new Error(`API error: ${response.status}`);
     }
     const posts = await response.json();
+    if (!Array.isArray(posts)) {
+      console.error("Unexpected GitHub response for blog articles", posts);
+      return [];
+    }
 
-    return await Promise.all(
-      posts.map(async (post: { sha: string; name: string }) => {
-        return {
-          id: post.sha,
-          title: post.name.replace(/\.md$/, ""),
-          author: "Manav Hirani",
-        };
-      })
-    );
+    return posts
+      .filter(
+        (post: { type?: string; name?: string }) =>
+          post.type === "file" && typeof post.name === "string" && post.name.endsWith(".md")
+      )
+      .map((post: { sha: string; name: string }) => ({
+        id: post.sha,
+        title: post.name.replace(/\.md$/, ""),
+        author: "Manav Hirani",
+      }));
   } catch (error) {
     console.error("Failed to fetch blog posts:", error);
     return [];
