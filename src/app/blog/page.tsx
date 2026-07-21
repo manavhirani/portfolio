@@ -1,6 +1,5 @@
-import { BlogList } from "@/components/blog-list";
+import Link from "next/link";
 
-// GitHub-backed listing must render on the server at request time
 export const dynamic = "force-dynamic";
 
 interface BlogPost {
@@ -13,24 +12,20 @@ async function fetchBlogPosts(): Promise<BlogPost[]> {
   try {
     const response = await fetch(
       "https://api.github.com/repos/manavhirani/blog/contents/articles",
-      {
-        // ISR-friendly cache; force-dynamic still ensures route is not static-prerendered
-        next: { revalidate: 300 },
-      }
+      { next: { revalidate: 300 } }
     );
     if (!response.ok) {
       throw new Error(`API error: ${response.status}`);
     }
     const posts = await response.json();
-    if (!Array.isArray(posts)) {
-      console.error("Unexpected GitHub response for blog articles", posts);
-      return [];
-    }
+    if (!Array.isArray(posts)) return [];
 
     return posts
       .filter(
         (post: { type?: string; name?: string }) =>
-          post.type === "file" && typeof post.name === "string" && post.name.endsWith(".md")
+          post.type === "file" &&
+          typeof post.name === "string" &&
+          post.name.endsWith(".md")
       )
       .map((post: { sha: string; name: string }) => ({
         id: post.sha,
@@ -45,5 +40,39 @@ async function fetchBlogPosts(): Promise<BlogPost[]> {
 
 export default async function Blog() {
   const posts = await fetchBlogPosts();
-  return <BlogList posts={posts} />;
+
+  return (
+    <main>
+      <h1>Blog</h1>
+      <p className="meta">
+        Posts from{" "}
+        <a
+          href="https://github.com/manavhirani/blog"
+          target="_blank"
+          rel="noreferrer"
+        >
+          github.com/manavhirani/blog
+        </a>
+      </p>
+
+      {posts.length === 0 ? (
+        <p>No posts found.</p>
+      ) : (
+        <ol>
+          {posts.map((post) => (
+            <li key={post.id} style={{ marginBottom: "0.6rem" }}>
+              <Link href={`/blog/${encodeURIComponent(post.title)}`}>
+                {post.title}
+              </Link>
+              <div className="meta">{post.author}</div>
+            </li>
+          ))}
+        </ol>
+      )}
+
+      <p style={{ marginTop: "1.5rem" }}>
+        <Link href="/">← Home</Link>
+      </p>
+    </main>
+  );
 }

@@ -1,12 +1,9 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
 import { fetchPostByName } from "@/components/posts";
-import { BlogPostView } from "@/components/blog-post-view";
 
-import "@/styles/github-dark.css";
-
-// Post content is fetched from GitHub at request time
 export const dynamic = "force-dynamic";
 
 const options = {
@@ -29,5 +26,27 @@ export default async function BlogPost(props: {
 
   const mdx = await MDXRemote({ source: post.content, options });
 
-  return <BlogPostView title={post.title}>{mdx}</BlogPostView>;
+  return (
+    <main>
+      <h1>{post.title}</h1>
+      <p className="meta">
+        Source:{" "}
+        <a
+          href={`https://github.com/manavhirani/blog/blob/main/articles/${encodeURIComponent(post.title)}.md`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          github.com/manavhirani/blog
+        </a>
+      </p>
+      <div className="prose" style={{ marginTop: "1.25rem" }}>
+        {mdx}
+      </div>
+      <p style={{ marginTop: "2rem" }}>
+        <Link href="/blog">← Blog</Link>
+        {" · "}
+        <Link href="/">Home</Link>
+      </p>
+    </main>
+  );
 }

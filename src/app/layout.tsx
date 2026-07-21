@@ -2,10 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { ThemeProvider } from "@/components/theme-provider";
-import { StyleModeProvider } from "@/components/style-mode-provider";
 import { NavBar } from "@/components/navbar";
-import { SiteShell } from "@/components/site-shell";
+import { links } from "@/lib/timeline";
 
 export const metadata: Metadata = {
   title: "Manav Hirani",
@@ -19,22 +17,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning data-style="retro">
-      <head />
+    <html lang="en">
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <StyleModeProvider>
-            <SiteShell>
-              <NavBar />
-              {children}
-            </SiteShell>
-          </StyleModeProvider>
-        </ThemeProvider>
+        <div className="wrap">
+          <NavBar />
+          {children}
+          <footer className="center">
+            <p>
+              <a href={links.email}>email</a>
+              {" · "}
+              <a href={links.github}>github</a>
+              {" · "}
+              <a href={links.linkedin}>linkedin</a>
+              {" · "}
+              <a href={links.x}>x</a>
+              {" · "}
+              <a href={links.scholar}>scholar</a>
+              {" · "}
+              <a href={links.portfolio}>source</a>
+            </p>
+          </footer>
+        </div>
         <Analytics />
         <SpeedInsights />
       </body>
