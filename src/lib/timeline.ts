@@ -1,3 +1,5 @@
+import type { ShaderName } from "./shaders";
+
 export type TimelineKind = "work" | "project" | "education" | "signal";
 
 export type TimelineLink = {
@@ -15,12 +17,15 @@ export type TimelineItem = {
   stack?: string;
   bullets?: string[];
   links?: TimelineLink[];
+  /** Generative art shown on the entry card. */
+  art: ShaderName;
 };
 
 /** Chronological timeline derived from the capability brief / resume. */
 export const timeline: TimelineItem[] = [
   {
     id: "sandisk",
+    art: "network",
     kind: "work",
     title: "Software Architect",
     org: "Sandisk · Global Supply Chain, AI Platform",
@@ -41,6 +46,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     id: "x-map",
+    art: "topo",
     kind: "project",
     title: "X-Map",
     org: "Independent · Honorable Mention, xAI Hackathon",
@@ -55,6 +61,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     id: "syracuse",
+    art: "flow",
     kind: "education",
     title: "M.S. Computer Science",
     org: "Syracuse University · GPA 3.7",
@@ -72,6 +79,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     id: "can-combat",
+    art: "signal",
     kind: "project",
     title: "CAN Combat",
     org: "Syracuse University · Supervised ML",
@@ -89,6 +97,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     id: "publication",
+    art: "conv",
     kind: "signal",
     title: "Publication",
     org: "Springer · Data Analytics & Management",
@@ -109,6 +118,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     id: "nmims",
+    art: "flow",
     kind: "education",
     title: "B.Tech. Computer Science",
     org: "NMIMS University",
@@ -123,6 +133,34 @@ export const briefBullets = [
   "Building production multi-agent harnesses and data platforms for global supply chain operations.",
   "Owning end-to-end agent orchestration at Sandisk: tool loops, session state, pipelines, and deployment.",
   "Working primarily with LangGraph, Databricks/Spark, Kubernetes, and cloud-native services on AWS and Azure.",
+];
+
+/** Unique stack items across the timeline, in order of appearance. */
+export const stack = Array.from(
+  new Set(timeline.flatMap((item) => item.stack?.split(" · ") ?? []))
+);
+
+export const highlights = [
+  {
+    label: "Now",
+    title: "Software Architect",
+    detail: "Sandisk · Global Supply Chain AI",
+  },
+  {
+    label: "Award",
+    title: "Honorable Mention",
+    detail: "xAI Hackathon · X-Map",
+  },
+  {
+    label: "Published",
+    title: "Springer, 2021",
+    detail: "CNNs for SQL injection detection",
+  },
+  {
+    label: "Education",
+    title: "M.S. Computer Science",
+    detail: "Syracuse University",
+  },
 ];
 
 export const links = {

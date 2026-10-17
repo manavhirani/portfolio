@@ -1,3 +1,5 @@
+import "@/styles/github-dark.css";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -27,26 +29,27 @@ export default async function BlogPost(props: {
   const mdx = await MDXRemote({ source: post.content, options });
 
   return (
-    <main>
-      <h1>{post.title}</h1>
-      <p className="meta">
-        Source:{" "}
+    <main className="container narrow page">
+      <h1 className="page-title load">{post.title}</h1>
+      <p className="post-meta load" style={{ "--d": "0.15s" } as CSSProperties}>
+        By Manav Hirani · Source on{" "}
         <a
           href={`https://github.com/manavhirani/blog/blob/main/articles/${encodeURIComponent(post.title)}.md`}
           target="_blank"
           rel="noreferrer"
         >
-          github.com/manavhirani/blog
+          GitHub
         </a>
       </p>
-      <div className="prose" style={{ marginTop: "1.25rem" }}>
+      <article className="prose load" style={{ "--d": "0.3s" } as CSSProperties}>
         {mdx}
-      </div>
-      <p style={{ marginTop: "2rem" }}>
-        <Link href="/blog">← Blog</Link>
-        {" · "}
-        <Link href="/">Home</Link>
-      </p>
+      </article>
+      <Link className="back" href="/blog">
+        ← Blog
+      </Link>
+      <Link className="back" href="/">
+        Home
+      </Link>
     </main>
   );
 }

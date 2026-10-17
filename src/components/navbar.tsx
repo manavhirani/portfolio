@@ -3,28 +3,21 @@ import { links } from "@/lib/timeline";
 
 export function NavBar() {
   return (
-    <nav className="center">
-      <div>
-        <Link href="/">
-          <strong>Manav Hirani</strong>
+    <nav className="nav">
+      <div className="nav-inner">
+        <Link href="/" className="mark" aria-label="Manav Hirani — home">
+          MH<span>.</span>
         </Link>
-      </div>
-      <div style={{ marginTop: "0.4rem" }}>
-        <Link href="/">Home</Link>
-        <Link href="/blog">Blog</Link>
-        <a href={links.github} target="_blank" rel="noreferrer">
-          GitHub
-        </a>
-        <a href={links.linkedin} target="_blank" rel="noreferrer">
-          LinkedIn
-        </a>
-        <a href={links.x} target="_blank" rel="noreferrer">
-          X
-        </a>
-        <a href={links.scholar} target="_blank" rel="noreferrer">
-          Scholar
-        </a>
-        <a href={links.email}>Email</a>
+        <div className="nav-links">
+          <Link href="/#work">Work</Link>
+          <Link href="/blog">Blog</Link>
+          <a href={links.github} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href={links.email} className="nav-cta">
+            Contact
+          </a>
+        </div>
       </div>
     </nav>
   );

@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -42,10 +43,12 @@ export default async function Blog() {
   const posts = await fetchBlogPosts();
 
   return (
-    <main>
-      <h1>Blog</h1>
-      <p className="meta">
-        Posts from{" "}
+    <main className="container narrow page">
+      <h1 className="page-title load">
+        The <em>Blog</em>
+      </h1>
+      <p className="post-meta load" style={{ "--d": "0.15s" } as CSSProperties}>
+        Notes and essays, published from{" "}
         <a
           href="https://github.com/manavhirani/blog"
           target="_blank"
@@ -56,23 +59,32 @@ export default async function Blog() {
       </p>
 
       {posts.length === 0 ? (
-        <p>No posts found.</p>
+        <p className="panel empty">No posts yet. Check back soon.</p>
       ) : (
-        <ol>
-          {posts.map((post) => (
-            <li key={post.id} style={{ marginBottom: "0.6rem" }}>
-              <Link href={`/blog/${encodeURIComponent(post.title)}`}>
-                {post.title}
+        <ol className="post-list">
+          {posts.map((post, i) => (
+            <li
+              key={post.id}
+              data-reveal
+              style={{ "--d": `${Math.min(i, 8) * 0.05}s` } as CSSProperties}
+            >
+              <Link
+                className="panel glow"
+                href={`/blog/${encodeURIComponent(post.title)}`}
+              >
+                <span className="post-title">{post.title}</span>
+                <span className="arrow" aria-hidden="true">
+                  →
+                </span>
               </Link>
-              <div className="meta">{post.author}</div>
             </li>
           ))}
         </ol>
       )}
 
-      <p style={{ marginTop: "1.5rem" }}>
-        <Link href="/">← Home</Link>
-      </p>
+      <Link className="back" href="/">
+        ← Home
+      </Link>
     </main>
   );
 }

@@ -1,14 +1,14 @@
-import { SkeletonCard } from "@/components/ui/skeleton-card"
-
 export default function BlogLoading() {
-	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-">
-			{ Array.from({ length: 9 }).map((_, i) =>  (
-				<div key={ i }>
-						<SkeletonCard />
-					</div>
-				))
-			}
-		</div>
-	)	
+  return (
+    <main className="container narrow page">
+      <h1 className="page-title">
+        The <em>Blog</em>
+      </h1>
+      <div className="post-list">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <div key={i} className="skeleton" />
+        ))}
+      </div>
+    </main>
+  );
 }
